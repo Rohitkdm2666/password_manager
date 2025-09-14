@@ -14,6 +14,28 @@ class PasswordsController < ApplicationController
         end
     end
 
+    def edit
+        @password = Password.find(params[:id])
+        @histories = PasswordHistory.where(password_id: @password.id).order(created_at: :desc)
+    end
+    def update
+        @password = Password.find(params[:id])
+        old_password = @password.password
+        new_password = params[:password][:new_password]
+
+        if @password.update(password: new_password)
+            PasswordHistory.create!(
+            password_id: @password.id,
+            old_password: old_password,
+            new_password: new_password
+            )
+            redirect_to passwords_index_path(id: @password.user_id), notice: 'Password was successfully updated.'
+        else
+            @histories = PasswordHistory.where(password_id: @password.id).order(created_at: :desc)
+            render :edit
+        end
+    end
+
     def destroy
         @password = Password.find(params[:id])
         if @password.destroy

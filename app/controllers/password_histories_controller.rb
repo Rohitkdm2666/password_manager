@@ -1,0 +1,2 @@
+class PasswordHistoriesController < ApplicationController
+end

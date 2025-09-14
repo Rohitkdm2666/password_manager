@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_09_13_100956) do
+ActiveRecord::Schema[8.0].define(version: 2025_09_14_055950) do
+  create_table "password_histories", force: :cascade do |t|
+    t.string "password_id"
+    t.string "old_password"
+    t.string "new_password"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "passwords", force: :cascade do |t|
     t.string "user_id"
     t.string "password"
