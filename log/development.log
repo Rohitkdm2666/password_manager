@@ -13676,3 +13676,55 @@ Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at
   
 ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
   
+Started GET "/" for 127.0.0.1 at 2025-09-14 14:00:49 +0530
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" /*action='index',application='PasswordManager',controller='users'*/[0m
+  ↳ app/views/users/index.html.erb:164:in 'Enumerable#each_with_index'
+  Rendered users/index.html.erb within layouts/application (Duration: 17.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 22.8ms | GC: 0.8ms)
+Completed 200 OK in 51ms (Views: 25.7ms | ActiveRecord: 2.5ms (1 query, 0 cached) | GC: 1.2ms)
+
+
+Started GET "/login?id=3" for 127.0.0.1 at 2025-09-14 14:00:51 +0530
+Processing by UsersController#login as HTML
+  Parameters: {"id" => "3"}
+  Rendering layout layouts/application.html.erb
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (Duration: 9.6ms | GC: 0.9ms)
+  Rendered layout layouts/application.html.erb (Duration: 11.2ms | GC: 0.9ms)
+Completed 200 OK in 29ms (Views: 12.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.9ms)
+
+
+Started GET "/login?id=3" for 127.0.0.1 at 2025-09-14 14:00:52 +0530
+Processing by UsersController#login as HTML
+  Parameters: {"id" => "3"}
+  Rendering layout layouts/application.html.erb
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (Duration: 3.0ms | GC: 0.4ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | GC: 0.4ms)
+Completed 200 OK in 22ms (Views: 4.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/login?id=3" for 127.0.0.1 at 2025-09-14 14:02:38 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='PasswordManager'*/[0m
+Processing by UsersController#login as HTML
+  Parameters: {"id" => "3"}
+  Rendering layout layouts/application.html.erb
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (Duration: 19.4ms | GC: 0.5ms)
+  Rendered layout layouts/application.html.erb (Duration: 57.6ms | GC: 0.5ms)
+Completed 200 OK in 153ms (Views: 67.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 2.0ms)
+
+
+Started GET "/login?id=3" for 127.0.0.1 at 2025-09-14 14:02:40 +0530
+Processing by UsersController#login as HTML
+  Parameters: {"id" => "3"}
+  Rendering layout layouts/application.html.erb
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (Duration: 11.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 20.8ms | GC: 0.0ms)
+Completed 200 OK in 47ms (Views: 26.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
